@@ -8,7 +8,7 @@ T* is an interpreted, esoteric programming language created by me _(tixonochek)_
 
 ### Links for fast travel
 1. [Main Concept](#main-concept)
-2. [Installation & Usage](#installation-&-usage)
+2. [Installation & Usage](#installation-and-usage)
 3. [Variables](#variables)
 
 ## Main Concept
@@ -33,7 +33,7 @@ However this would be executed flawlessly:
 "..." -> Print // This is a comment ^_^
 ```
 
-## Installation & Usage
+## Installation and Usage
 As you might've noticed, T* is written fully in Python. There are 2 ways on how you can install and enjoy coding in the toaster language.
 
 **Method number 1️⃣**: You can install an executable from the **Releases** page of this github repository for your OS. After that, just run the executable with the application arguments you want whilst providing a file name of a file with `.tost` extension. As an example, if you are on **Windows**, you would use a command similar to that: `toster.exe FILENAME.tost` where `FILENAME` is the name of your file.

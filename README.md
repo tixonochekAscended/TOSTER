@@ -45,8 +45,8 @@ To create a variable, you need to create a line using `=>` MIO. Here's an exampl
 ```toster
 13 => tix
 ```
-You also can change the value of an already existing variable with ease. Here's how you can increase the value of a variable called `t` by 8.
+You also can change the value of an already existing variable with ease. Here's how you can increase the value of a variable called `$t` by 8.
 ```toster
-5 => t
-t + 8 => t
+5 => $t
+$t + 8 => $t
 ```

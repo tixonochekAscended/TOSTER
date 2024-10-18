@@ -6,11 +6,13 @@
 # T* - A programming language.
 T* is an interpreted, esoteric programming language created by me _(tixonochek)_. Usually people don't refer to T* by language's official name but call it **toster** (read as: toaster). This name derives from the fact that symbol `*` is an **asterisk**. If we shorten that word we get **aster**, and for the language to not have a meaningless alias **Taster** it's called **Toster**, symbolising a nice, working toaster which can be seen on the logo of the language.
 
+⚠️ **Warning**: if you are new and would like to know more about the language, you need to read this page from this point right to the bottom of it. It isn't advised to skip parts of the text - you might miss **crucial** information about how the language works. *It's obviously fine to skip some long and detailed descriptions of functions - it's not like I can decide what are you going to read anyway.*
 ### Links for fast travel
 1. [Main Concept](#main-concept)
 2. [Installation & Usage](#installation-and-usage)
 3. [Variables](#variables)
 4. [Where are the floats](#where-are-the-floats)
+5. [Operators](#operators)
 
 ## Main Concept
 Every single line contains a **MIO**, which stands for **Mega Important Operator**. Right now you shouldn't question the naming decisions made by the developer but how the language works itself. **MIO** is either `->` or `=>`, where `->` makes line a function call and `=>` makes line assign a certain value to a certain variable. You can indeed think of those as putting bread 🍞 into the toaster. 
@@ -62,3 +64,20 @@ What do you think this line will print? It's right: `88`. First, we define a var
 
 ## Where are the floats
 You might have noticed that we used words **number** and **string** to describe the types. But while talking about numbers, we never created a float. That's because there __are no floats, you dummy!__ Who cares about floats anyway. They are a piece of garbage that never should've been invented...
+
+## Operators
+There can only be 1 operator per side of the line. There can't be more than a single operator on the side, just remember it once and for all. For example you __can't__ do this
+```toster
+1 + 15 * 2 => a
+a -> Print
+```
+This won't print anything but give an error instead. This approach works though:
+```toster
+15 * 2 => a
+a + 1 => a
+a -> Print
+```
+This might sound like an inconvinience, but this is actually a genius move by the developer of the language *(definitely not me)*. Don't question it - accept it.
+
+### Operator descriptions
+There are 13 operators in T*. Here's a detailed description of each one of them and an explanation of their behaviour when working with different types.

@@ -10,7 +10,7 @@ T* is an interpreted, esoteric programming language created by me _(tixonochek)_
 1. [Main Concept](#main-concept)
 2. [Installation & Usage](#installation-and-usage)
 3. [Variables](#variables)
-4. [Where are the floats?](#where-are-the-floats?)
+4. [Where are the floats?](#where-are-the-floats-?)
 
 ## Main Concept
 Every single line contains a **MIO**, which stands for **Mega Important Operator**. Right now you shouldn't question the naming decisions made by the developer but how the language works itself. **MIO** is either `->` or `=>`, where `->` makes line a function call and `=>` makes line assign a certain value to a certain variable. You can indeed think of those as putting bread 🍞 into the toaster. 

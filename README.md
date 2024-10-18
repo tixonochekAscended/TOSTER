@@ -13,6 +13,12 @@ T* is an interpreted, esoteric programming language created by me _(tixonochek)_
 3. [Variables](#variables)
 4. [Where are the floats](#where-are-the-floats)
 5. [Operators](#operators)
+6. [Operator descriptions](#operator-descriptions)
+7. [Why strings become weird numbers](#why-strings-become-weird-numbers)
+8. [Functions](#functions)
+9. [Function descriptions](#function-descriptions)
+10. [What `$res` is](#what-is-dollar-res)
+
 
 ## Main Concept
 Every single line contains a **MIO**, which stands for **Mega Important Operator**. Right now you shouldn't question the naming decisions made by the developer but how the language works itself. **MIO** is either `->` or `=>`, where `->` makes line a function call and `=>` makes line assign a certain value to a certain variable. You can indeed think of those as putting bread 🍞 into the toaster. 
@@ -79,5 +85,206 @@ a -> Print
 ```
 This might sound like an inconvinience, but this is actually a genius move by the developer of the language *(definitely not me)*. Don't question it - accept it.
 
-### Operator descriptions
-There are 13 operators in T*. Here's a detailed description of each one of them and an explanation of their behaviour when working with different types.
+## Operator descriptions
+There are 13 operators in T*. Here's an explanation of their behaviour when working with different types. Experiment yourself to check out different behaviours ^_^
+### `+` ADD Operator
+Self-explanatory.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `String`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `String`       |
+| `Number`            | `Number`             | `Number`       |
+### `-` SUB Operator
+Self-explanatory.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `/` DIVIDE Operator
+Self-explanatory.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `*` MULTIPLY Operator
+Self-explanatory. If string is multiplied by a string those strings are **crossed** together. Check it out yourself.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `String`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `String`       |
+| `Number`            | `Number`             | `Number`       |
+### `%` ADD Operator
+Self-explanatory.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `==` EQUALS Operator
+Compares both the type and the value of the passed arguments. Is different in comparsion to the __equality__ operator.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `>` GREATER THAN Operator
+Self-explanatory. 
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `<` LESS THAN Operator
+Self-explanatory. 
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `>=` GREATER THAN OR EQUALS Operator
+Self-explanatory. 
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `<=` LESS THAN OR EQUALS Operator
+Self-explanatory. 
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+### `.` DOT Operator
+Selects a random operator and executes what that random operator is supposed to do. Basically _shapeshifts_ into another operator at will.
+### `..` DUBLEDOT Operator
+There's a 50% chance that the first value first be "picked" (and evaluated at the end) and a 50% for the second value to be "picked". Basically a 50/50. This is the operator that is being executed if there are just 2 values standing next to each other, f.e. `"Hey!" 13`. In this case, either `"Hey!"` or `13` will be picked.
+### `=` EQUALITY Operator
+Compares __values__ of the 2 arguments passed onto it. F.e. `"13" = 13` is true, so it evaluates to `1`.
+| First Argument Type | Second Argument Type | Resulting Type |
+|---------------------|----------------------|----------------|
+| `String`            | `String`             | `Number`       |
+| `Number`            | `String`             | `Number`       |
+| `String`            | `Number`             | `Number`       |
+| `Number`            | `Number`             | `Number`       |
+## Why strings become weird numbers
+If a string is passed onto an operator that can't generally work with strings (basically if a string __HAS__ to be converted into a number), that string takes a form of an __Ordinal Sum__. Ordinal Sum is a number, that is the sum of each character's unicode representation. For example, "Hey!" converted into it's ordinal sum is this: `72 + 101 + 121 + 33 = 327`.
+## Functions
+To call a function in T*, you need to use the `->` MIO. Uppercase, lowercase or _random_ case - it doesn't matter, as long as the function exists and the name is correct. Still, usually we use `PascalCase`. You can only provide a single argument to a function. Get ready, because soon everything will get more complicated.
+
+This is an example of how you can print "Hello, World!":
+```toster
+"Hello, World!" -> Print
+```
+
+This example shows how you can use `Goto` and `RunIf` to make loops:
+```
+1 => a
+a -> Print
+a + 1 => a
+a < 6 -> RunIf
+2 -> Goto
+"Program ended. Exiting..." -> Print
+```
+The output of this code is:
+```
+1
+2
+3
+4
+5
+Program ended. Exiting...
+```
+Remember, that boolean as a type doesn't exist, and all possible bools are either 0 or 1. 
+
+Also, make sure you understand that each function is either able to get **just** a number as an argument, **just** a string or **both** (f.e. `Print` accepts both).
+## Function descriptions
+Here's an explanation of what each function does and what types does it accept. Enjoy reading all of that ^_^
+
+⚠️ **Warning**: Before starting your journey, _please_ read about what `$res` is. [Click here](#what-is-dollar-res).
+
+### `PRINT`: Accepts both `Number` and `String`
+Outputs whatever is given to it - it's that simple. Automatically puts a newline character (`"\n"`) at the end of each string.
+
+### `GOTO`: Accepts only `Number`
+A simple goto (jump) instruction. Jumps to the given __line__ of the file.
+
+### `RUNIF`: Accepts only `Number`
+If whatever is given to it is a `0` then the next line isn't executed, if it's `1` or greater than one then the next line **is** executed. Changes `$res` in this way: if that "next line" was executed, `$res` becomes `1`. Otherwise, `0`.
+
+### `NOT`: Accepts only `Number`
+If a `0` is given, sets `$res` to `1`. Otherwise, sets `$res` to `0`.
+
+### `UPPERCASE`: Accepts only `String`
+`$res` firstly becomes the string that is given and then is converted to uppercase.
+
+### `LOWERCASE`: Accepts only `String`
+`$res` firstly becomes the string that is given and then is converted to lowercase.
+
+### `RANDOMCASE`: Accepts only `String`
+`$res` firstly becomes the string that is given and then is converted to *randomcase*.
+
+### `STRIP`: Accepts only `String`
+`$res` firstly becomes the string that is given and then is being __trimmed__ or __stripped__, call it whatever you want.
+
+### `NOSPACES`: Accepts only `String`
+`$res` firstly becomes the string that is given and then all of the spaces are removed.
+
+### `STARTSWITH`: Accepts only `String`
+If whatever is in `$res` starts with the given substring, then `$res` becomes `1`. Otherwise, `0`.
+
+### `ENDSWITH`: Accepts only `String`
+If whatever is in `$res` ends with the given substring, then `$res` becomes `1`. Otherwise, `0`.
+
+### `LENGTH`: Accepts both `Number` and `String`
+`$res` becomes either the amount of digits in a number or the length of a given string.
+
+### `COUNTUP`: Accepts only `String`
+Counts up the amount of that character in a number or a string and then sets the `$res` to that amount.
+
+### `ISSTRING`: Accepts both `Number` and `String`
+Sets `$res` to `1` if a given argument is a string, otherwise `$res` becomes 0.
+
+### `ISNUMBER`: Accepts both `Number` and `String`
+Sets `$res` to `1` if a given argument is a number, otherwise `$res` becomes 0.
+
+### `EMPOWER`: Accepts only `Number`
+If `$res` is not a number, sets it to `-1`.
+Otherwise, rises `$res` to the power of `N`, where `N` is the number that was provided.
+
+### `EMROOT`: Accepts only `Number`
+If `$res` is not a number, sets it to `-1`.
+Otherwise, gets the `N`th root of `$res`, where `N` is the number that was provided.
+
+### `STORE`: Accepts both `Number` and `String`
+Simply sets `$res` to the given value.
+
+## What is dollar res
+`$res` makes this language magical. The concept of it is simple, but the usage may be more complicated. `$res` is being set to 0 once the application starts. You can't manually set `$res` to something you want via the `=>` MIO, however you may use the `STORE` function, but this is rarely required. `$res` is a variable that is being updated based on the previous line (either a function call or a variable assignment). 
+
+There are functions that do __NOT__ update `$res`, f.e. `PRINT` or `GOTO`. Just remember that. Behaviour of functions that __DO__ update `$res` is written in the _Function descriptions_ above.
+
+If the previous line was a variable assignment, f.e. `3 => a`, then `$res` becomes a "link" or a "pointer" of sorts to the value of the newly created variable. This can be used to manipulate variables with spaces and not only that. Don't question why would you want a variable like that - that's why T* is the language of _magic_ 🧙‍♂️.
+
+Here's an example of that link behaviour:
+```toster
+3 => "LMFAO ..."
+$res -> Print
+```
+This outputs `3`.
+## Support
+For any questions you can join this discord server (we rarely speak English in there but still can help you in any way - feel free to join): https://discord.gg/NSK7YJ2R6j
+## Contribution and Inspiration
+This language was heavily inspired by `Kii` and `Kii 2.0` languages - they also are _magical_. Thanks to [ICT](https://github.com/Ict00) ^_^

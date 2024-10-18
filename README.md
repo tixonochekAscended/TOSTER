@@ -10,7 +10,7 @@ T* is an interpreted, esoteric programming language created by me _(tixonochek)_
 1. [Main Concept](#main-concept)
 2. [Installation & Usage](#installation-and-usage)
 3. [Variables](#variables)
-4. [Where are the floats?](#where-are-the-floats-?)
+4. [Where are the floats](#where-are-the-floats)
 
 ## Main Concept
 Every single line contains a **MIO**, which stands for **Mega Important Operator**. Right now you shouldn't question the naming decisions made by the developer but how the language works itself. **MIO** is either `->` or `=>`, where `->` makes line a function call and `=>` makes line assign a certain value to a certain variable. You can indeed think of those as putting bread 🍞 into the toaster. 
@@ -60,5 +60,5 @@ a13 -> Print
 ```
 What do you think this line will print? It's right: `88`. First, we define a variable with the name `lmao` and put string `"a"` into it. Then, we create another variable called `huh` and assign the number `13` to it. Afterwards, we put the number `88` into the variable called "a13". Basically, `lmao + huh` = `"a" + 13` which evaluates to a string `"a13"`. Considering it's a string, a variable is created successefully. Afterwards we just output the new variable (called `a13`). It's just that simple ^_^
 
-## Where are the floats?
+## Where are the floats
 You might have noticed that we used words **number** and **string** to describe the types. But while talking about numbers, we never created a float. That's because there __are no floats, you dummy!__ Who cares about floats anyway. They are a piece of garbage that never should've been invented...

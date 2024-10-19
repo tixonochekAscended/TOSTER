@@ -271,6 +271,21 @@ Otherwise, gets the `N`th root of `$res`, where `N` is the number that was provi
 ### `STORE`: Accepts both `Number` and `String`
 Simply sets `$res` to the given value.
 
+### `SLEEP`: Accepts only `Number`
+Sleeps (waits) for the `N` amount of time, where `N` is the number given to it. Requires __miliseconds__!
+
+### `INPUT`: Accepts only `String`
+Requests an input from the user, printing a message beforehand (the message is the string given).
+
+### `RANDOM`: Accepts only `Number`
+Generates a pseudo-random number from `1` to `N` including both endpoints, where `N` is the number given.
+
+### `READFILE`: Accepts only `String`
+Reads a file with the name `N` and puts it's contents into `$res`, where `N` is the string given. If a file can't be read, sets `$res` to `-1`.
+
+### `WRITEFILE`: Accepts only `String`
+Writes whatever is inside of `$res` into a file with the name `N` (rewriting its previous content), where `N` is the string given. If the file doesn't exist yet, creates one. If a file can't be written to / created, sets `$res` to `-1`.
+
 ## What is dollar res
 `$res` makes this language magical. The concept of it is simple, but the usage may be more complicated. `$res` is being set to 0 once the application starts. You can't manually set `$res` to something you want via the `=>` MIO, however you may use the `STORE` function, but this is rarely required. `$res` is a variable that is being updated based on the previous line (either a function call or a variable assignment). 
 

@@ -1,4 +1,4 @@
-import sys, os, random, math
+import sys, os, random, math, time
 from enum import Enum
 from typing import Any, NoReturn, Union
 
@@ -251,13 +251,13 @@ class Functions: # ALL OF T*'s FUNCTIONS ARE HERE ^_^
         return argument.val.replace(' ', '') # pyright: ignore
 
     def STARTSWITH_STRING_RUN(self, argument: Value):
-        res = vrs.get_var("$res").val.val
+        res = str(vrs.get_var("$res").val.val)
         if res.startswith(argument.val): # pyright: ignore
             return 1
         return 0
 
     def ENDSWITH_STRING_RUN(self, argument: Value):
-        res = vrs.get_var("$res").val.val
+        res = str(vrs.get_var("$res").val.val)
         if res.endswith(argument.val): # pyright: ignore
             return 1
         return 0
@@ -303,6 +303,30 @@ class Functions: # ALL OF T*'s FUNCTIONS ARE HERE ^_^
 
     def STORE_NUMBER_RUN(self, argument: Value):
         return argument.val
+
+    def SLEEP_NUMBER_RUN(self, argument: Value):
+        time.sleep(argument.val/1000) # pyright: ignore
+
+    def RANDOM_NUMBER_RUN(self, argument: Value):
+        return random.randint(1,argument.val) # pyright: ignore
+
+    def INPUT_STRING_RUN(self, argument: Value):
+        return input(argument.val)
+
+    def READFILE_STRING_RUN(self, argument: Value):
+        try:
+            with open(argument.val, 'r', encoding='utf-8') as f:
+                return f.read()
+        except:
+            return -1
+
+    def WRITEFILE_STRING_RUN(self, argument: Value):
+        try:
+            with open(argument.val, 'w', encoding='utf-8') as f:
+                f.write(str(vrs.get_var("$res").val.val))
+                return 0
+        except:
+            return -1
 
 def ord_sum(wstr) -> int:
     ret = 0
@@ -911,3 +935,4 @@ if __name__ == "__main__":
         run()
     except KeyboardInterrupt:
         error("KeyboardInterrupt", ErrorType.BASIC)
+

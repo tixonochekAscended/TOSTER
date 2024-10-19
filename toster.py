@@ -308,6 +308,7 @@ class Functions: # ALL OF T*'s FUNCTIONS ARE HERE ^_^
         time.sleep(argument.val/1000) # pyright: ignore
 
     def RANDOM_NUMBER_RUN(self, argument: Value):
+        if argument.val <= 1: return 1 # pyright: ignore
         return random.randint(1,argument.val) # pyright: ignore
 
     def INPUT_STRING_RUN(self, argument: Value):
@@ -935,4 +936,3 @@ if __name__ == "__main__":
         run()
     except KeyboardInterrupt:
         error("KeyboardInterrupt", ErrorType.BASIC)
-

@@ -1,4 +1,4 @@
-import sys, os, random, math, time
+import sys, os, random, math, time, shutil
 from enum import Enum
 from typing import Any, NoReturn, Union
 
@@ -328,6 +328,33 @@ class Functions: # ALL OF T*'s FUNCTIONS ARE HERE ^_^
                 return 0
         except:
             return -1
+
+    def CREATEDIR_STRING_RUN(self, argument: Value):
+        try:
+            os.mkdir(argument.val) # pyright: ignore
+            return 0
+        except FileExistsError:
+            return -1
+        except:
+            return -2
+
+    def DELETEDIR_STRING_RUN(self, argument: Value):
+        try:
+            shutil.rmtree(argument.val) # pyright: ignore
+            return 0
+        except FileNotFoundError:
+            return -1
+        except:
+            return -2
+
+    def DELETEFILE_STRING_RUN(self, argument: Value):
+        try:
+            os.remove(argument.val) # pyright: ignore
+            return 0
+        except FileNotFoundError:
+            return -1
+        except:
+            return -2
 
 def ord_sum(wstr) -> int:
     ret = 0

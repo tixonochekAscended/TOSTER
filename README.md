@@ -286,6 +286,15 @@ Reads a file with the name `N` and puts it's contents into `$res`, where `N` is 
 ### `WRITEFILE`: Accepts only `String`
 Writes whatever is inside of `$res` into a file with the name `N` (rewriting its previous content), where `N` is the string given. If the file doesn't exist yet, creates one. If a file can't be written to / created, sets `$res` to `-1`.
 
+### `DELETEFILE`: Accepts only `String`
+Deletes the file with the name `N`, where `N` is the string given. If removal was successful, sets `$res` to `0`. If the file wasn't found, sets `$res` to `-1`. If other error emerged, sets `$res` to `-2`.
+
+### `CREATEDIR`: Accepts only `String`
+Creates a directory with the name `N`, where `N` is the string given. Sets `$res` to `0` if the creation was successful. If the directory with that name already exists, sets `$res` to `-1`. If some other error emerges during the creation process, sets `$res` to `-2`. 
+
+### `DELETEDIR`: Accepts only `String`
+Deletes the directory with the name `N`, where `N` is the string given. All of the files that were in that directory during the deleting process are also erased. If removal was successful, sets `$res` to `0`. If the directory wasn't found, sets `$res` to `-1`. If other error emerged, sets `$res` to `-2`.
+
 ## What is dollar res
 `$res` makes this language magical. The concept of it is simple, but the usage may be more complicated. `$res` is being set to 0 once the application starts. You can't manually set `$res` to something you want via the `=>` MIO, however you may use the `STORE` function, but this is rarely required. `$res` is a variable that is being updated based on the previous line (either a function call or a variable assignment). 
 

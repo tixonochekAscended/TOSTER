@@ -313,3 +313,4 @@ This outputs `3`.
 For any questions you can join this discord server (we rarely speak English in there but still can help you in any way - feel free to join): https://discord.gg/NSK7YJ2R6j
 ## Contribution and Inspiration
 This language was heavily inspired by `Kii` and `Kii 2.0` languages - they also are _magical_. Thanks to [ICT](https://github.com/Ict00) ^_^
+T* Logo in "Material" style was made by **WaterMelon**.

@@ -265,7 +265,7 @@ Sets `$res` to `1` if a given argument is a number, otherwise `$res` becomes 0.
 If `$res` is not a number, sets it to `-1`.
 Otherwise, rises `$res` to the power of `N`, where `N` is the number that was provided.
 
-### `EMROOT`: Accepts only `Number`
+### `ENROOT`: Accepts only `Number`
 If `$res` is not a number, sets it to `-1`.
 Otherwise, gets the `N`th root of `$res`, where `N` is the number that was provided.
 

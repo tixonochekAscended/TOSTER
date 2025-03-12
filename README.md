@@ -1,6 +1,6 @@
 <p align="center">
-<a href="https://ibb.co/V2GYm6g"><img src="https://i.ibb.co/zGgVJdX/T-Logo-1.png" width=250 height=250></a>
-  <a href="https://ibb.co/V2GYm6g"><img src="https://i.ibb.co/vDJJfqc/Toster-Advanced-1.png" width=250 height=250></a>
+<a><img src="https://i.ibb.co/zGgVJdX/T-Logo-1.png" width=250 height=250></a>
+  <a><img src="https://i.ibb.co/vDJJfqc/Toster-Advanced-1.png" width=250 height=250></a>
 </p>
 
 ------------------------
